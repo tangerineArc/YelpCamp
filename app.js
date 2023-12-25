@@ -155,7 +155,9 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render("error.ejs", {err});
 });
 
-app.listen(7504, () => {
-    console.log("serving on port 7504");
+const port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+    console.log(`Serving on port ${port}`);
 });
 
