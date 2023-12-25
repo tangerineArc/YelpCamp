@@ -27,17 +27,8 @@ const userRoutes = require("./routes/users");
 const campgroundRoutes = require("./routes/campgrounds");
 const reviewRoutes = require("./routes/reviews");
 
-// const dbUrl = process.env.DB_URL;
+const dbUrl = process.env.DB_URL;
 
-// mongoose.connect(dbUrl)
-//     .then(() => {
-//         console.log("Mongo connected successfully!");
-//     })
-//     .catch(err => {
-//         console.log("Error: Couldn't connect to Mongo!");
-//     });
-
-const dbUrl = 'mongodb://127.0.0.1:27017/yelp-camp';
 mongoose.connect(dbUrl)
     .then(() => {
         console.log("Mongo connected successfully!");
