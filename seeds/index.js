@@ -4,7 +4,9 @@ const cities = require("./cities");
 const {places, descriptors} = require("./seedHelpers");
 const Campground = require("../models/campground");
 
-mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp')
+const dbUrl = process.env.DB_URL;
+
+mongoose.connect(dbUrl)
     .then(() => {
         console.log("Mongo connected successfully!");
     })
@@ -13,20 +15,6 @@ mongoose.connect('mongodb://127.0.0.1:27017/yelp-camp')
     });
 
 const sample = array => array[Math.floor(Math.random() * array.length)];
-
-// async function seedImg() {
-//     try {
-//       const resp = await axios.get('https://api.unsplash.com/photos/random', {
-//         params: {
-//           client_id: "ic272elILunfbCAypCQjAVQStUp1zyAECJCTreM3GXM",
-//           collections: 483251
-//         }
-//       })
-//       return resp.data.urls.small
-//     } catch (err) {
-//       console.error(err)
-//     }
-//   }
 
 const seedDB = async() => {
     await Campground.deleteMany({});
@@ -37,7 +25,6 @@ const seedDB = async() => {
           author: "6582dcc7e11d139244e5fef1",
           location: `${cities[random1000].city}, ${cities[random1000].state}`,
           title: `${sample(descriptors)} ${sample(places)}`,
-          // image: await seedImg(),
           description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius adipisci porro doloribus! Voluptates aperiam perferendis labore excepturi ullam, corporis minus sit architecto perspiciatis molestiae dolorem. Ullam maiores est distinctio unde.",
           price,
           geometry: {
