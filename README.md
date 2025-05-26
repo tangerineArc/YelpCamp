@@ -4,7 +4,9 @@ YelpCamp is a yelp-like full-stack web-application where users can create and re
 
 ## Features
 
-## Tech Stack
+- Add new campgrounds
+- Review and comment on existing campgrounds
+- Access worldwide campground locations on an interactive map
 
 ## Repo Structure
 
@@ -21,6 +23,21 @@ Below is a list of the files and directories that the project contains:
 - `/views/*` - contains markup files for frontend pages
 - `/app.js` - main driver file for the backend server
 - `/schemas.js` - database schema and sanitization
+
+## Tech Stack
+
+- **JavaScript** - frontend scripting language
+- **Node.js** - backend JavaScript runtime environment
+- **Express.js** - backend web-framework
+- **Passport.js** - user authentication and authorization library
+- **MongoDB** - database program
+- **Mongoose** - ODM for MongoDB
+- **Cloudinary** - cloud storage service for images
+- **Mapbox** - web maps provider
+- **Helmet.js** - Express.js middleware for security improvements
+- **joi** - schema description and data validation library
+- **EJS** - templating engine
+- **Bootstrap** - frontend styling toolkit
 
 ## Snapshots
 
